@@ -4,7 +4,8 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.integer('quiz_id')
       .references('quiz.id')
-      .onDelete('CASCADE')
+      .onDelete('CASCADE');
+    table.text('question_text')
   });
 };
 

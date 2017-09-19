@@ -6,9 +6,9 @@ module.exports = {
     client: 'pg',
     connection: 'postgresql://localhost/exit_tickets'
   },
-
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL
+    connection: process.env.DATABASE_URL,
+    searchPath: 'knex,public'
   }
 };

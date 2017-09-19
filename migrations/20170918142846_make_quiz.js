@@ -4,12 +4,11 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.integer('instructor_id')
       .references('instructor.id')
-      .onDelete('CASCADE')
-    table.timestamps()
-    table.text('questions')
+      .onDelete('CASCADE');
+    table.timestamps();
   });
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists('quiz')
+  return knex.schema.dropTableIfExists('quiz');
 };
