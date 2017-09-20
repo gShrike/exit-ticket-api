@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "test": "./node_modules/mocha/bin/mocha tests",
+    "acceptance": "./node_modules/mocha/bin/mocha tests/acceptance"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
+    "dotenv": "^4.0.0",
     "express": "~4.14.1",
     "jade": "~1.11.0",
     "knex": "^0.13.0",

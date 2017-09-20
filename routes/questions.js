@@ -1,9 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var database = require('../db/knex');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('Hiiii!')
+  database('question').select()
+    .then((question) => {
+      res.status(200)
+      res.json(question)
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error
+      })
+    });
 });
 
 module.exports = router;

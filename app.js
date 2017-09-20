@@ -9,7 +9,7 @@ var app = express();
 
 var questions = require('./routes/questions');
 var quizzes = require('./routes/quizzes');
-var users = require('./routes/users');
+var instructors = require('./routes/instructors');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/v1/api/questions', questions);
 app.use('/v1/api/quizzes', quizzes);
-app.use('/v1/api/users', users);
+app.use('/v1/api/instructors', instructors);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
